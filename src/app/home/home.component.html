@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title><span translate>Home</span></ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card class="ion-text-center">
+    <ion-card-content>
+      <ion-card-title>
+        <span translate>Hello world !</span>
+      </ion-card-title>
+      <p><button (click)="send(1, true)">Locker 1</button></p>
+      <p><button (click)="send(2, false)">Locker 1</button></p>
+      <p><button (click)="send(3, true)">Locker 2</button></p>
+      <p><button (click)="send(4, true)">Locker 2</button></p>
+      <!--p>
+        <app-loader [isLoading]="isLoading"></app-loader>
+        <q [hidden]="isLoading"></q>
+      </p -->
+    </ion-card-content>
+  </ion-card>
+</ion-content>
