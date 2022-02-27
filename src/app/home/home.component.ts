@@ -21,6 +21,12 @@ var publishPayload = {
 })
 export class HomeComponent implements OnInit {
   isLoading = false;
+  status = [
+    { locked: false, opened: true },
+    { locked: false, opened: true },
+    { locked: false, opened: true },
+    { locked: false, opened: true },
+  ];
 
   constructor(public pubnub: PubNubAngular) {
     pubnub.init({
@@ -34,9 +40,10 @@ export class HomeComponent implements OnInit {
     });
 
     pubnub.addListener({
-      message: function (m: any) {
+      message: (m: any) => {
         console.log(m);
 
+        this.status = m.message.status;
         // handle messages
       },
     });
